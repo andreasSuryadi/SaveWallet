@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TabunganKu</string>
+    <string name="title_home">Home</string>
+    <string name="title_wallet">Wallet</string>
+    <string name="title_report">Report</string>
+    <string name="title_account">Account</string>
+</resources>
