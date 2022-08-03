@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SplashActivity">
+    tools:context=".RegisterSuccessActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,27 +18,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title_splash"
+                android:text="@string/register_success"
                 android:layout_marginTop="50dp"
+                android:layout_marginBottom="100dp"
                 android:textColor="@android:color/background_dark"
                 android:textSize="35dp"
                 android:fontFamily="@font/open_sans_bold"
                 tools:ignore="SpUsage" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/subtitle_splash"
-                android:textColor="@color/secondary_color"
-                android:textSize="18dp"
-                android:fontFamily="@font/open_sans_bold"
-                android:layout_marginBottom="250px"
-                tools:ignore="SpUsage" />
-
             <ImageView
                 android:layout_width="300dp"
                 android:layout_height="300dp"
-                android:src="@drawable/ic_splash" />
+                android:src="@drawable/ic_register_success" />
         </LinearLayout>
 
         <LinearLayout
@@ -50,28 +41,15 @@
             android:paddingLeft="15dp"
             android:paddingRight="15dp">
             <Button
-                android:id="@+id/btnregister"
+                android:id="@+id/btnlogin"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_marginTop="50dp"
-                android:text="@string/register"
+                android:layout_marginTop="100dp"
+                android:text="@string/login"
                 app:cornerRadius="5dp"
                 android:textColor="#fff"
                 android:fontFamily="@font/open_sans_bold"
                 android:backgroundTint="@color/main_color"
-                tools:ignore="DuplicateSpeakableTextCheck">
-
-            </Button>
-
-            <Button
-                android:id="@+id/btnlogin"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="@string/login"
-                app:cornerRadius="5dp"
-                android:textColor="@color/main_color"
-                android:backgroundTint="#fff"
-                android:fontFamily="@font/open_sans_bold"
                 tools:ignore="DuplicateSpeakableTextCheck">
 
             </Button>

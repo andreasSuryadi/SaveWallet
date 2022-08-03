@@ -1,7 +1,21 @@
 <resources>
     <string name="app_name">TabunganKu</string>
+
     <string name="title_home">Home</string>
     <string name="title_wallet">Wallet</string>
     <string name="title_report">Report</string>
     <string name="title_account">Account</string>
+
+    <string name="title_splash">Let\'s Get Started</string>
+    <string name="subtitle_splash">Save your money through us</string>
+
+    <string name="register">REGISTER</string>
+    <string name="login">LOGIN</string>
+
+    <string name="register_success">Register Success</string>
+
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="password_confirmation">Password Confirmation</string>
 </resources>
