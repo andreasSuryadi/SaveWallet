@@ -23,13 +23,6 @@ public class UserModel {
     @SerializedName("password_confirmation")
     public String passwordConfirmation;
 
-    public UserModel(String name, String email, String password, String passwordConfirmation) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.passwordConfirmation = passwordConfirmation;
-    }
-
     public int getId() {
         return id;
     }

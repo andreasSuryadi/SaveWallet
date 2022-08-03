@@ -38,6 +38,9 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

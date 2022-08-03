@@ -1,6 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.account.AccountFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/ic_header_profile">
+
+            </ImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/ic_profile_picture"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="110dp"
+                app:border_width="4dp"
+                app:border_color="@color/white"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:gravity="center"
+                android:text="@string/name"
+                android:textColor="@color/main_color"
+                android:textSize="28sp"></TextView>
+
+            <TextView
+                android:id="@+id/profile_email"
+                android:layout_width="304dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/open_sans"
+                android:gravity="center"
+                android:text="@string/email"
+                android:textColor="@color/black"
+                android:textSize="18sp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+            <Button
+                android:id="@+id/btneditprofile"
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
+                app:icon="@drawable/ic_user"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="50dp"
+                android:text="@string/edit_profile"
+                app:cornerRadius="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/open_sans_bold"
+                android:backgroundTint="@color/white"
+                tools:ignore="DuplicateSpeakableTextCheck">
+
+            </Button>
+
+            <Button
+                android:id="@+id/btneditpassword"
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
+                app:icon="@android:drawable/ic_lock_lock"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/edit_password"
+                app:cornerRadius="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/open_sans_bold"
+                android:backgroundTint="@color/white"
+                tools:ignore="DuplicateSpeakableTextCheck">
+
+            </Button>
+
+            <Button
+                android:id="@+id/btnlogout"
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
+                app:icon="@drawable/ic_logout"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/logout"
+                app:cornerRadius="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/open_sans_bold"
+                android:backgroundTint="@color/white"
+                tools:ignore="DuplicateSpeakableTextCheck">
+
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

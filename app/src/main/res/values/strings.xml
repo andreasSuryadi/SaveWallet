@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TabunganKu</string>
+    <string name="app_name">SaveWallet</string>
 
     <string name="title_home">Home</string>
     <string name="title_wallet">Wallet</string>
@@ -11,6 +11,10 @@
 
     <string name="register">REGISTER</string>
     <string name="login">LOGIN</string>
+    <string name="logout">LOGOUT</string>
+
+    <string name="edit_profile">Edit Profile</string>
+    <string name="edit_password">Edit Password</string>
 
     <string name="register_success">Register Success</string>
 

@@ -29,7 +29,6 @@ public class SessionManager {
     }
 
     public void saveAuthToken(String token) {
-        Log.d("token", token);
         editor.putString(USER_TOKEN, token);
         editor.apply();
     }

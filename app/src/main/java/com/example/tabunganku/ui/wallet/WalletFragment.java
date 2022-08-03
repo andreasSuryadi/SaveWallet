@@ -1,4 +1,4 @@
-package com.example.tabunganku.ui.home;
+package com.example.tabunganku.ui.wallet;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.tabunganku.R;
-import com.example.tabunganku.databinding.FragmentHomeBinding;
+import com.example.tabunganku.databinding.FragmentWalletBinding;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
@@ -25,22 +25,22 @@ import java.util.Objects;
  *
  */
 
-public class HomeFragment extends Fragment {
+public class WalletFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentWalletBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
 
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        WalletViewModel walletViewModel =
+                new ViewModelProvider(this).get(WalletViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentWalletBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textWallet;
+        walletViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

@@ -3,12 +3,15 @@ package com.example.tabunganku.api;
 import com.example.tabunganku.request.LoginRequest;
 import com.example.tabunganku.response.LoginResponse;
 import com.example.tabunganku.model.user.UserModel;
+import com.example.tabunganku.response.UserResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 /**
@@ -28,4 +31,8 @@ public interface ApiService {
     // For login
     @POST("api/login")
     Call<LoginResponse> login(@Body LoginRequest loginRequest);
+
+    // For show user
+    @GET("api/user/show-profile")
+    Call<UserResponse> showProfile(@Header("Authorization") String token);
 }

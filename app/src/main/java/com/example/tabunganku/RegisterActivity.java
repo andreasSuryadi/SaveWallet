@@ -85,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         ApiService api = ApiEndPoint.getClient().create(ApiService.class);
 
-        UserModel userModel = new UserModel(name, email, password, passwordConfirmation);
+        UserModel userModel = new UserModel();
 
         Call<UserModel> call = api.register(userModel);
         call.enqueue(new Callback<UserModel>() {

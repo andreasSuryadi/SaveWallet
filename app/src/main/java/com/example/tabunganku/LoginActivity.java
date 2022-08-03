@@ -85,19 +85,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 int statusCode = response.code();
-                Log.d("response", String.valueOf(response.code()));
                 loadingPb.setVisibility(View.GONE);
 
                 if (statusCode == successCode && response.body().user != null) {
                     emailText.setText("");
                     passwordText.setText("");
 
-                    Log.d("token1", response.body().accessToken);
-                    Log.d("token2", response.body().getAccessToken());
-
                     sessionManager.saveAuthToken(response.body().getAccessToken());
-
-                    Log.d("token", sessionManager.fetchAuthToken());
 
                     new Handler().postDelayed(() -> {
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);

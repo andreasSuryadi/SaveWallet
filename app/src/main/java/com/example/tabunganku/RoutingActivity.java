@@ -10,6 +10,8 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.tabunganku.session.SessionManager;
+
 import java.util.Objects;
 
 /**
@@ -27,26 +29,35 @@ public class RoutingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        checkFirstRun();
+    }
 
-        setContentView(R.layout.activity_splash);
+    private void checkFirstRun() {
+        SessionManager sessionManager = new SessionManager(this);
+        String token = sessionManager.fetchAuthToken();
+
+        setContentView(R.layout.splash_screen);
+
+        if (token == null) {
+            startActivity();
+        } else {
+            Objects.requireNonNull(getSupportActionBar()).hide();
+
+            new Handler().postDelayed(() -> {
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }, 2000);
+        }
+    }
+
+    private void startActivity() {
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        Button btnLogin = (Button) findViewById(R.id.btnlogin);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(RoutingActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button btnRegister = (Button) findViewById(R.id.btnregister);
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(RoutingActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(this, SplashActivity.class);
+            startActivity(intent);
+            finish();
+        }, 2000);
     }
 }
