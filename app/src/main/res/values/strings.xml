@@ -14,7 +14,7 @@
     <string name="logout">LOGOUT</string>
 
     <string name="edit_profile">Edit Profile</string>
-    <string name="edit_password">Edit Password</string>
+    <string name="change_password">Change Password</string>
 
     <string name="register_success">Register Success</string>
 
@@ -22,4 +22,8 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="password_confirmation">Password Confirmation</string>
+
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="new_password_confirmation">New Password Confirmation</string>
 </resources>

@@ -36,4 +36,9 @@ public class SessionManager {
     public String fetchAuthToken() {
         return sharedPref.getString(USER_TOKEN, null);
     }
+
+    public void removeAuthToken() {
+        editor.clear();
+        editor.apply();
+    }
 }

@@ -102,7 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Intent intent = new Intent(RegisterActivity.this, RegisterSuccessActivity.class);
                     startActivity(intent);
                     finish();
-                }, 2000);
+                }, 100);
             }
 
             @Override

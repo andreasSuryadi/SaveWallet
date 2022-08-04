@@ -97,7 +97,7 @@ public class LoginActivity extends AppCompatActivity {
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
-                    }, 2000);
+                    }, 100);
                 } else {
                     Toast.makeText(LoginActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
                 }

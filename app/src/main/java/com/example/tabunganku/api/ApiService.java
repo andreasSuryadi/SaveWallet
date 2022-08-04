@@ -1,8 +1,13 @@
 package com.example.tabunganku.api;
 
+import com.example.tabunganku.request.ChangePasswordRequest;
+import com.example.tabunganku.request.EditProfileRequest;
 import com.example.tabunganku.request.LoginRequest;
+import com.example.tabunganku.response.ChangePasswordResponse;
+import com.example.tabunganku.response.EditProfileResponse;
 import com.example.tabunganku.response.LoginResponse;
 import com.example.tabunganku.model.user.UserModel;
+import com.example.tabunganku.response.LogoutResponse;
 import com.example.tabunganku.response.UserResponse;
 
 import retrofit2.Call;
@@ -32,7 +37,19 @@ public interface ApiService {
     @POST("api/login")
     Call<LoginResponse> login(@Body LoginRequest loginRequest);
 
-    // For show user
+    // For logout
+    @POST("api/logout")
+    Call<LogoutResponse> logout(@Header("Authorization") String token);
+
+    // For show user profile
     @GET("api/user/show-profile")
     Call<UserResponse> showProfile(@Header("Authorization") String token);
+
+    // For edit user profile
+    @POST("api/user/edit-profile")
+    Call<EditProfileResponse> editProfile(@Header("Authorization") String token, @Body EditProfileRequest editProfileRequest);
+
+    // For user change password
+    @POST("api/user/change-password")
+    Call<ChangePasswordResponse> changePassword(@Header("Authorization") String token, @Body ChangePasswordRequest changePasswordRequest);
 }

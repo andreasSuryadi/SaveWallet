@@ -12,6 +12,8 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.tabunganku.databinding.ActivityMainBinding;
 
+import java.util.Objects;
+
 /**
  *
  * Tanggal Pengerjaan       : 29 Juli 2022
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -41,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String fragment = extras.getString("Fragment");
+            if (fragment.equals("Account_Fragment")) {
+                navController.navigate(R.id.navigation_account);
+            }
+        }
     }
 
 }
