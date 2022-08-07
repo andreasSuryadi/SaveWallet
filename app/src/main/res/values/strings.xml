@@ -26,4 +26,16 @@
     <string name="current_password">Current Password</string>
     <string name="new_password">New Password</string>
     <string name="new_password_confirmation">New Password Confirmation</string>
+
+    <string name="hello">Hello,</string>
+
+    <string name="total_balance">Total Balance</string>
+    <string name="wallet">Rp 1.200.000</string>
+    <string name="date">Thu, 4 Aug 2022</string>
+    <string name="income">Income</string>
+    <string name="income_wallet">Rp. 1.000.000</string>
+    <string name="expense">Expense</string>
+    <string name="expense_wallet">Rp. 1.200.000</string>
+    <string name="todays_transaction">Today\'s Transaction</string>
+    <string name="description">Description</string>
 </resources>

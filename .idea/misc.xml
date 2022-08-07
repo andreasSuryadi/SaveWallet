@@ -9,6 +9,7 @@
         <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
         <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2265" />
         <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/font/open_sans_bold.xml" value="0.284375" />
+        <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/layout/activity_add_wallet.xml" value="0.10104166666666667" />
         <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/layout/activity_change_password.xml" value="0.10104166666666667" />
         <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/layout/activity_edit_password.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/layout/activity_edit_proflie.xml" value="0.22826086956521738" />
@@ -24,6 +25,7 @@
         <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/layout/fragment_report.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/layout/fragment_wallet.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/layout/splash_screen.xml" value="0.264" />
+        <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/layout/wallet_item_list.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2265" />
         <entry key="..\:/Users/Andreas Suryadi/AndroidStudioProjects/TabunganKu/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2265" />

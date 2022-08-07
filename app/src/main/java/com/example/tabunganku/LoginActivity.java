@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                     emailText.setText("");
                     passwordText.setText("");
 
-                    sessionManager.saveAuthToken(response.body().getAccessToken());
+                    sessionManager.saveAuthToken(response.body().getAccessToken(), response.body().getUser().getName(), response.body().getUser().getEmail());
 
                     new Handler().postDelayed(() -> {
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);

@@ -124,25 +124,8 @@ public class AccountFragment extends Fragment {
         ApiService api = ApiEndPoint.getClient().create(ApiService.class);
 
         sessionManager = new SessionManager(getContext());
-        String token = "Bearer " + sessionManager.fetchAuthToken();
-        Call<UserResponse> call = api.showProfile(token);
-        call.enqueue(new Callback<UserResponse>() {
-            @Override
-            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                int statusCode = response.code();
-
-                if (statusCode == successCode) {
-                    UserModel userModel = response.body().getUser();
-                    name.setText(userModel.getName());
-                    email.setText(userModel.getEmail());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<UserResponse> call, Throwable t) {
-                Toast.makeText(getActivity(), "Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        name.setText(sessionManager.fetchName());
+        email.setText(sessionManager.fetchEmail());
     }
 
     @Override

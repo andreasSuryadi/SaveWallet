@@ -12,18 +12,6 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_wallet"
-        android:name="com.example.tabunganku.ui.wallet.WalletFragment"
-        android:label="@string/title_wallet"
-        tools:layout="@layout/fragment_wallet" />
-
-    <fragment
-        android:id="@+id/navigation_report"
-        android:name="com.example.tabunganku.ui.report.ReportFragment"
-        android:label="@string/title_report"
-        tools:layout="@layout/fragment_report" />
-
-    <fragment
         android:id="@+id/navigation_account"
         android:name="com.example.tabunganku.ui.account.AccountFragment"
         android:label="@string/title_account"

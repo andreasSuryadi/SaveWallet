@@ -9,6 +9,9 @@ import com.example.tabunganku.response.LoginResponse;
 import com.example.tabunganku.model.user.UserModel;
 import com.example.tabunganku.response.LogoutResponse;
 import com.example.tabunganku.response.UserResponse;
+import com.example.tabunganku.response.WalletResponse;
+
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -18,6 +21,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 /**
  *
@@ -52,4 +56,8 @@ public interface ApiService {
     // For user change password
     @POST("api/user/change-password")
     Call<ChangePasswordResponse> changePassword(@Header("Authorization") String token, @Body ChangePasswordRequest changePasswordRequest);
+
+    // For list wallet
+    @GET("api/wallet")
+    Call<WalletResponse> wallet(@Header("Authorization") String token, @Query("start_date") Date startDate, @Query("start_date") Date endDate);
 }

@@ -7,14 +7,8 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_wallet"
-        android:icon="@drawable/ic_wallet"
-        android:title="@string/title_wallet" />
-
-    <item
-        android:id="@+id/navigation_report"
-        android:icon="@drawable/ic_report"
-        android:title="@string/title_report" />
+        android:id="@+id/placeholder"
+        android:title="" />
 
     <item
         android:id="@+id/navigation_account"

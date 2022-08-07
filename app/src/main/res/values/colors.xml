@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main_color">#2ab765</color>
     <color name="secondary_color">#dbdadb</color>
+    <color name="error_color">#cb4243</color>
 </resources>
