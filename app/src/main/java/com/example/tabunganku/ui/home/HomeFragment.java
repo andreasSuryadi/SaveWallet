@@ -29,6 +29,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -65,15 +66,17 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
         TextView totalWalletText = binding.walletBalance;
+        TextView totalWalletIncomeText = binding.incomeWallet;
+        TextView totalWalletExpenseText = binding.expenseWallet;
         TextView dateText = binding.walletDate;
         TextView nameText = binding.profileName;
 
-        getData(totalWalletText, dateText, nameText);
+        getData(totalWalletText, totalWalletIncomeText, totalWalletExpenseText, dateText, nameText);
         
         return root;
     }
 
-    private void getData(TextView totalWallet, TextView date, TextView name) {
+    private void getData(TextView totalWallet, TextView incomeWallet, TextView expenseWallet, TextView date, TextView name) {
         ApiService api = ApiEndPoint.getClient().create(ApiService.class);
 
         sessionManager = new SessionManager(getContext());
@@ -91,11 +94,25 @@ public class HomeFragment extends Fragment {
 
                 if (statusCode == successCode) {
                     WalletModel walletModel = response.body().getWallet();
-                    Integer totalInteger = Integer.parseInt(walletModel.getTotalWallet());
                     String str1 = "Rp ";
-                    String total = str1.concat((String.format("%,d", totalInteger)).replace(',', '.'));
-                    totalWallet.setText(total);
-                    date.setText(walletModel.getCreatedAt());
+
+                    Integer totalWalletInteger = Integer.parseInt(walletModel.getTotalWallet());
+                    String totalWalletString = str1.concat((String.format("%,d", totalWalletInteger)).replace(',', '.'));
+                    totalWallet.setText(totalWalletString);
+
+                    Integer totalWalletIncomeInteger = Integer.parseInt(walletModel.getTotalWalletIncome());
+                    String totalWalletIncomeString = str1.concat((String.format("%,d", totalWalletIncomeInteger)).replace(',', '.'));
+                    incomeWallet.setText(totalWalletIncomeString);
+
+                    Integer totalWalletExpenseInteger = Integer.parseInt(walletModel.getTotalWalletExpense());
+                    String totalWalletExpenseString = str1.concat((String.format("%,d", totalWalletExpenseInteger)).replace(',', '.'));
+                    expenseWallet.setText(totalWalletExpenseString);
+
+                    String pattern = "dd MMM yyyy";
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+                    String dateText = simpleDateFormat.format(new Date());
+
+                    date.setText(dateText);
                     walletDetailModel = response.body().getWalletDetails();
 
                     recyclerView = binding.recyclerViewHome;

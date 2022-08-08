@@ -47,6 +47,9 @@
         <activity
             android:name=".ChangePasswordActivity"
             android:exported="true" />
+        <activity
+            android:name=".AddTransactionActivity"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

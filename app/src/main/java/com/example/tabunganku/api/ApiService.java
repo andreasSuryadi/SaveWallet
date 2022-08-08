@@ -3,6 +3,7 @@ package com.example.tabunganku.api;
 import com.example.tabunganku.request.ChangePasswordRequest;
 import com.example.tabunganku.request.EditProfileRequest;
 import com.example.tabunganku.request.LoginRequest;
+import com.example.tabunganku.request.WalletRequest;
 import com.example.tabunganku.response.ChangePasswordResponse;
 import com.example.tabunganku.response.EditProfileResponse;
 import com.example.tabunganku.response.LoginResponse;
@@ -60,4 +61,7 @@ public interface ApiService {
     // For list wallet
     @GET("api/wallet")
     Call<WalletResponse> wallet(@Header("Authorization") String token, @Query("start_date") Date startDate, @Query("start_date") Date endDate);
+
+    @POST("api/wallet/store")
+    Call<WalletResponse> saveWallet(@Header("Authorization") String token, @Body WalletRequest walletRequest);
 }

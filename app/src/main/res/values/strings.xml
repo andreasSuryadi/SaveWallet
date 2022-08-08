@@ -38,4 +38,9 @@
     <string name="expense_wallet">Rp. 1.200.000</string>
     <string name="todays_transaction">Today\'s Transaction</string>
     <string name="description">Description</string>
+
+    <string name="add_transaction">Add Transaction</string>
+    <string name="transaction_type">Transaction Type</string>
+    <string name="transaction_money">Transaction Money</string>
+    <string name="transaction_description">Transaction Description</string>
 </resources>
