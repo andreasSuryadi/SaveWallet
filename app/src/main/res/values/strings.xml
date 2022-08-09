@@ -18,8 +18,8 @@
 
     <string name="register_success">Register Success</string>
 
-    <string name="name">John</string>
-    <string name="email">john@example.com</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="password_confirmation">Password Confirmation</string>
 
