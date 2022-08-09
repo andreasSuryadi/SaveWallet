@@ -18,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.tabunganku.api.ApiEndPoint;
 import com.example.tabunganku.api.ApiService;
 import com.example.tabunganku.model.user.UserModel;
+import com.example.tabunganku.request.RegisterRequest;
+import com.example.tabunganku.response.RegisterResponse;
 
 import java.util.Objects;
 
@@ -85,12 +87,13 @@ public class RegisterActivity extends AppCompatActivity {
 
         ApiService api = ApiEndPoint.getClient().create(ApiService.class);
 
-        UserModel userModel = new UserModel();
+        RegisterRequest registerRequest = new RegisterRequest(name, email, password, passwordConfirmation);
 
-        Call<UserModel> call = api.register(userModel);
-        call.enqueue(new Callback<UserModel>() {
+        Call<RegisterResponse> call = api.register(registerRequest);
+        call.enqueue(new Callback<RegisterResponse>() {
             @Override
-            public void onResponse(Call<UserModel> call, Response<UserModel> response) {
+            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                int statusCode = response.code();
                 loadingPb.setVisibility(View.GONE);
 
                 nameText.setText("");
@@ -98,15 +101,19 @@ public class RegisterActivity extends AppCompatActivity {
                 passwordText.setText("");
                 passwordConfirmationText.setText("");
 
-                new Handler().postDelayed(() -> {
-                    Intent intent = new Intent(RegisterActivity.this, RegisterSuccessActivity.class);
-                    startActivity(intent);
-                    finish();
-                }, 100);
+                if (statusCode == successCode) {
+                    new Handler().postDelayed(() -> {
+                        Intent intent = new Intent(RegisterActivity.this, RegisterSuccessActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }, 100);
+                } else {
+                    Toast.makeText(RegisterActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
-            public void onFailure(Call<UserModel> call, Throwable t) {
+            public void onFailure(Call<RegisterResponse> call, Throwable t) {
                 Toast.makeText(RegisterActivity.this, "Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

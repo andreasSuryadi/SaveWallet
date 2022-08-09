@@ -3,12 +3,14 @@ package com.example.tabunganku.api;
 import com.example.tabunganku.request.ChangePasswordRequest;
 import com.example.tabunganku.request.EditProfileRequest;
 import com.example.tabunganku.request.LoginRequest;
+import com.example.tabunganku.request.RegisterRequest;
 import com.example.tabunganku.request.WalletRequest;
 import com.example.tabunganku.response.ChangePasswordResponse;
 import com.example.tabunganku.response.EditProfileResponse;
 import com.example.tabunganku.response.LoginResponse;
 import com.example.tabunganku.model.user.UserModel;
 import com.example.tabunganku.response.LogoutResponse;
+import com.example.tabunganku.response.RegisterResponse;
 import com.example.tabunganku.response.UserResponse;
 import com.example.tabunganku.response.WalletResponse;
 
@@ -36,7 +38,7 @@ import retrofit2.http.Query;
 public interface ApiService {
     // For register
     @POST("api/register")
-    Call<UserModel> register(@Body UserModel userModel);
+    Call<RegisterResponse> register(@Body RegisterRequest registerRequest);
 
     // For login
     @POST("api/login")
