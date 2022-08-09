@@ -2,6 +2,8 @@ package com.example.tabunganku.request;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Locale;
+
 /**
  *
  * NIM                  : 10119918
@@ -20,7 +22,7 @@ public class WalletRequest {
     public String description;
 
     public WalletRequest(String type, String money, String description) {
-        this.type = type;
+        this.type = type.toLowerCase();
         this.money = money;
         this.description = description;
     }

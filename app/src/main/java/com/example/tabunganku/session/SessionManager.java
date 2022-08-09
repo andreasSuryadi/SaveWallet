@@ -37,6 +37,12 @@ public class SessionManager {
         editor.apply();
     }
 
+    public void saveEditProfile(String name, String email) {
+        editor.putString(USER_NAME, name);
+        editor.putString(USER_EMAIL, email);
+        editor.apply();
+    }
+
     public String fetchAuthToken() {
         return sharedPref.getString(USER_TOKEN, null);
     }

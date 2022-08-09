@@ -121,6 +121,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 if (statusCode == successCode && response.body().user != null) {
                     nameText.setText("");
                     emailText.setText("");
+                    sessionManager.saveEditProfile(name, email);
 
                     new Handler().postDelayed(() -> {
                         Intent intent = new Intent(EditProfileActivity.this, MainActivity.class);

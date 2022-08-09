@@ -81,6 +81,7 @@
                 android:id="@+id/money_text"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
+                android:inputType="number"
                 android:backgroundTint="@color/main_color"
                 android:ems="10"
                 android:hint="@string/transaction_money"
